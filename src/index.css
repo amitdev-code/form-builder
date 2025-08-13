@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Nunito", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #000;
+  background-color: #fff;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Primary Color Variables */
+  --color-primary: 114 87 254;
+  --color-primary-50: 245 243 255;
+  --color-primary-100: 237 233 254;
+  --color-primary-200: 221 214 254;
+  --color-primary-300: 196 181 253;
+  --color-primary-400: 167 139 250;
+  --color-primary-500: 114 87 254;
+  --color-primary-600: 99 102 241;
+  --color-primary-700: 79 70 229;
+  --color-primary-800: 67 56 202;
+  --color-primary-900: 55 48 163;
+  --color-primary-950: 30 27 75;
+}
+
+/* Custom utility classes for primary color */
+@layer utilities {
+  .bg-primary {
+    background-color: rgb(var(--color-primary));
+  }
+  
+  .text-primary {
+    color: rgb(var(--color-primary));
+  }
+  
+  .border-primary {
+    border-color: rgb(var(--color-primary));
+  }
+  
+  .ring-primary {
+    --tw-ring-color: rgb(var(--color-primary));
+  }
+  
+  .focus\:ring-primary:focus {
+    --tw-ring-color: rgb(var(--color-primary));
+  }
+  
+  .focus\:border-primary:focus {
+    border-color: rgb(var(--color-primary));
+  }
+  
+  .hover\:bg-primary-600:hover {
+    background-color: rgb(var(--color-primary-600));
+  }
+
+  .hover\:bg-primary:hover {
+    background-color: rgb(var(--color-primary));
+  }
+  
+  .hover\:text-primary:hover {
+    color: rgb(var(--color-primary) / 0.8);
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}

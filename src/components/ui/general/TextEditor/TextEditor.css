@@ -1,0 +1,136 @@
+.text-editor {
+  border: 1px solid #e0e7ff;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.text-editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px;
+  border-top: 1px solid #f1f5f9;
+  background-color: #f8fafc;
+  border-radius: 0 0 12px 12px;
+}
+
+.toolbar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  background-color: #f1f5f9;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.toolbar-button:hover {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+.toolbar-button.active {
+  background-color: #8b5cf6;
+  color: #fff;
+}
+
+.toolbar-button.active:hover {
+  background-color: #7c3aed;
+}
+
+/* Special styling for emoji and mention buttons */
+.toolbar-button.emoji-button,
+.toolbar-button.mention-button {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+/* Separator styling */
+.toolbar-separator {
+  width: 1px;
+  height: 24px;
+  background-color: #e2e8f0;
+  margin: 0 4px;
+}
+
+/* Primary action button (send/confirm) */
+.toolbar-button.primary-action {
+  background-color: #8b5cf6;
+  color: #fff;
+  margin-left: auto;
+}
+
+.toolbar-button.primary-action:hover {
+  background-color: #7c3aed;
+}
+
+/* Cancel/clear button */
+.toolbar-button.cancel-button {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.toolbar-button.cancel-button:hover {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* Tiptap Editor Content Styling */
+.text-editor .ProseMirror {
+  min-height: 80px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  outline: none;
+  overflow-y: auto;
+  color: #1e293b;
+  border: 1px solid #e0e7ff;
+}
+
+.text-editor .ProseMirror:focus {
+  outline: none;
+}
+
+/* Placeholder styling for Tiptap */
+.text-editor .ProseMirror p.is-editor-empty:first-child::before {
+  color: #94a3b8;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+  font-style: italic;
+}
+
+/* Ensure proper styling for formatted text */
+.text-editor .ProseMirror strong,
+.text-editor .ProseMirror b {
+  font-weight: 600;
+}
+
+.text-editor .ProseMirror em,
+.text-editor .ProseMirror i {
+  font-style: italic;
+}
+
+.text-editor .ProseMirror u {
+  text-decoration: underline;
+}
+
+.text-editor .ProseMirror s {
+  text-decoration: line-through;
+}
+
+/* Remove default margins from paragraphs */
+.text-editor .ProseMirror p {
+  margin: 0;
+}
